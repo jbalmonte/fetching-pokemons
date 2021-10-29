@@ -3,14 +3,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Bevan&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento&display=swap");
 html {
-  background-color: #1A1A1E;
+  background-color: #1a1a1e;
   color: #dfdfdf;
   font-family: "Bevan";
   height: 100vh;
   width: 100vw;
 }
 
-html main {
+*:focus {
+  outline: none;
+}
+
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,5 +24,130 @@ html main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 3rem;
+  padding: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #input {
+  margin-bottom: 0.5rem;
+  font-family: "Quattrocento", serif;
+}
+
+main #input form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #input form input {
+  border: 1px solid transparent;
+  padding: 0.8rem 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  border-radius: 0.3rem;
+  background-color: #27282b;
+  color: #dfdfdf;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+main #input form input:focus {
+  border: 1px dashed #dfdfdf;
+}
+
+main #input form button {
+  font-family: "Bevan" !important;
+  border-style: none;
+  border-radius: 8 px;
+  height: auto;
+  width: auto;
+  margin: 0px 5px 0px 2px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #27282b;
+  border-radius: 8px;
+  background-color: #169ca7;
+}
+
+main #input form button:hover {
+  background-color: #16bdca;
+}
+
+main #input p button {
+  color: #169ca7;
+  background-color: inherit;
+  border: none;
+}
+
+main #input p button:hover {
+  text-decoration: underline;
+}
+
+main .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px dashed #169ca7;
+  border-radius: 1rem;
+  padding: 1rem 8rem 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .display div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px dashed #169ca7;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  width: 200px;
+  min-height: 200px;
+}
+
+main .display div p {
+  text-align: center;
+}
+
+main .display table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+main .display table tr {
+  border-bottom: 1px dashed #169ca7;
+  padding: 5px;
+  min-width: 75px;
+  text-align: center;
+}
+
+main .display table tr td {
+  padding: 0.3rem 2.5rem;
 }

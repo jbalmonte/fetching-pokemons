@@ -1,17 +1,13 @@
 @import "./_variables.scss";
 
 html {
-    background-color:$background-color;
-    color: map-get($colors, font);
-    font-family: $main-font;
-    height: 100vh;
-    width: 100vw;
-
-        main{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 3rem;
-        }
+  background-color: map-get($map: $colors, $key: bg);
+  color: map-get($colors, font);
+  font-family: $main-font;
+  height: 100vh;
+  width: 100vw;
 }
 
+*:focus {
+  outline: none;
+}
