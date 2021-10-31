@@ -6,8 +6,6 @@ html {
   background-color: #1a1a1e;
   color: #dfdfdf;
   font-family: "Bevan";
-  height: 100vh;
-  width: 100vw;
 }
 
 *:focus {
@@ -24,7 +22,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -33,7 +31,6 @@ main {
 
 main #input {
   margin-bottom: 0.5rem;
-  font-family: "Quattrocento", serif;
 }
 
 main #input form {
@@ -50,6 +47,7 @@ main #input form {
 
 main #input form input {
   border: 1px solid transparent;
+  font-family: "Quattrocento";
   padding: 0.8rem 1rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0%;
@@ -57,7 +55,7 @@ main #input form input {
   border-radius: 0.3rem;
   background-color: #27282b;
   color: #dfdfdf;
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 5px;
 }
 
@@ -68,7 +66,7 @@ main #input form input:focus {
 main #input form button {
   font-family: "Bevan" !important;
   border-style: none;
-  border-radius: 8 px;
+  border-radius: 8px;
   height: auto;
   width: auto;
   margin: 0px 5px 0px 2px;
@@ -106,14 +104,15 @@ main .display {
           align-items: center;
   border: 1px dashed #169ca7;
   border-radius: 1rem;
-  padding: 1rem 8rem 2rem;
+  padding: 1rem 0 2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-width: 40rem;
 }
 
-main .display div {
+main .display #image-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,10 +129,18 @@ main .display div {
   display: flex;
   width: 200px;
   min-height: 200px;
+  min-width: 200px;
 }
 
-main .display div p {
+main .display #image-div p {
   text-align: center;
+}
+
+main .display #image-div #image {
+  max-height: 190px;
+  max-width: 190px;
+  border-radius: 5%;
+  overflow: hidden;
 }
 
 main .display table {
@@ -150,4 +157,22 @@ main .display table tr {
 
 main .display table tr td {
   padding: 0.3rem 2.5rem;
+  font-family: "Quattrocento";
+  color: #dfdfdf;
+}
+
+img {
+  inset: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 190px;
+  height: 190px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
 }
