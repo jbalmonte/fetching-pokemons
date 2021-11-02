@@ -1,0 +1,13 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin border($color: main, $style: dashed) {
+  border: 1px $style map-get($map: $colors, $key: $color);
+}
+
+@mixin border-bottom($style, $color: main) {
+  border-bottom: 1px $style map-get($map: $colors, $key: $color);
+}

@@ -21,7 +21,7 @@ function Input({ text, setText, fetch }) {
                     value={text}
                     onChange={e => setText(e.target.value)}
                 />
-                <button type="submit">Fetch!</button>
+                <button className="button" type="submit">Fetch!</button>
             </form>
 
             <p>

@@ -12,6 +12,10 @@ html {
   outline: none;
 }
 
+body > iframe {
+  display: none !important;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -102,7 +106,6 @@ main .display {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px dashed #169ca7;
   border-radius: 1rem;
   padding: 1rem 0 2rem;
   -webkit-box-orient: vertical;
@@ -112,7 +115,7 @@ main .display {
   min-width: 40rem;
 }
 
-main .display #image-div {
+main .display .image-div, main .display .error-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,7 +125,6 @@ main .display #image-div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px dashed #169ca7;
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 5px;
@@ -132,11 +134,11 @@ main .display #image-div {
   min-width: 200px;
 }
 
-main .display #image-div p {
+main .display .image-div p, main .display .error-div p {
   text-align: center;
 }
 
-main .display #image-div #image {
+main .display .image-div #image, main .display .error-div #image {
   max-height: 190px;
   max-width: 190px;
   border-radius: 5%;
@@ -149,7 +151,6 @@ main .display table {
 }
 
 main .display table tr {
-  border-bottom: 1px dashed #169ca7;
   padding: 5px;
   min-width: 75px;
   text-align: center;
@@ -158,6 +159,7 @@ main .display table tr {
 main .display table tr td {
   padding: 0.3rem 2.5rem;
   font-family: "Quattrocento";
+  font-size: 14px;
   color: #dfdfdf;
 }
 
@@ -175,4 +177,79 @@ img {
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
+}
+
+.b-solid {
+  border: 1px solid #169ca7;
+}
+
+.b-dashed {
+  border: 1px dashed #169ca7;
+}
+
+.bb-dashed {
+  border-bottom: 1px dashed #169ca7;
+}
+
+.bb-solid {
+  border-bottom: 1px solid #169ca7;
+}
+
+.error {
+  border: 1px dashed red;
+}
+
+.bb-error {
+  border-bottom: 1px dashed red;
+}
+
+.error-div {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.error-div p {
+  font-family: "Quattrocento" !important;
+  font-size: 14px;
+  color: #dfdfdf;
+}
+
+.error-div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  text-decoration: none;
+  border-style: none;
+  border-radius: 8px;
+  height: auto;
+  width: auto;
+  margin: 5px auto;
+  color: #27282b;
+  padding: 10px;
+  font-size: 12px;
+  font-family: "Bevan";
+  background-color: red;
+  opacity: 0.8;
+}
+
+.error-div button:hover {
+  opacity: 1;
 }

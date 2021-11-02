@@ -1,15 +1,6 @@
 @import "./partials/base";
-@import "./partials/_variables.scss";
-
-@mixin center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin border($color: main) {
-  border: 1px dashed map-get($map: $colors, $key: $color);
-}
+@import "./partials/_variables";
+@import "./partials/_mixins";
 
 main {
   @include center;
@@ -71,15 +62,15 @@ main {
 
   .display {
     @include center;
-    @include border;
+    // @include border;
     border-radius: 1rem;
     padding: 1rem 0 2rem;
     flex-direction: column;
     min-width: 40rem;
 
-    #image-div {
+    .image-div {
       @include center;
-      @include border;
+      // @include border;
       border-radius: 15px;
       padding: 10px;
       margin-bottom: 5px;
@@ -105,7 +96,6 @@ main {
       border-spacing: 0;
 
       tr {
-        border-bottom: 1px dashed map-get($map: $colors, $key: main);
         padding: 5px;
         min-width: 75px;
         text-align: center;
@@ -113,6 +103,7 @@ main {
         td {
           padding: 0.3rem 2.5rem;
           font-family: $secondary-font;
+          font-size: 14px;
           color: map-get($map: $colors, $key: font);
         }
       }
@@ -133,4 +124,65 @@ img {
   max-width: 100%;
   min-height: 100%;
   max-height: 100%;
+}
+
+.b-solid {
+  @include border(main, solid);
+}
+.b-dashed {
+  @include border(main, dashed);
+}
+
+.bb-dashed {
+  @include border-bottom(dashed);
+}
+
+.bb-solid {
+  @include border-bottom(solid);
+}
+
+.error {
+  @include border(error, dashed);
+}
+
+.bb-error {
+  @include border-bottom(dashed, error);
+}
+
+.error-div {
+  @extend .image-div;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    font-family: $secondary-font !important;
+    font-size: 14px;
+    color: map-get($map: $colors, $key: font);
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    border-style: none;
+    border-radius: 8px;
+    height: auto;
+    width: auto;
+    margin: 5px auto;
+    color: map-get($map: $colors, $key: semi-light-bg);
+    padding: 10px;
+    font-size: 12px;
+    font-family: $main-font;
+    background-color: map-get($map: $colors, $key: error);
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
