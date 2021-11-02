@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Input from './Input'
 
 export default class ErrorBoundary extends Component {
     constructor(props) {
