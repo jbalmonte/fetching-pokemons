@@ -1,14 +1,21 @@
 import React from 'react'
 
-function Input({ text, setText, fetch }) {
+function Input({ text, setText, fetch, reset = null }) {
+
+    const myFetch = name => {
+        fetch({ variables: { name } })
+        setTimeout(() => reset?.(), 0)
+    }
+
     const handleSuggestion = e => {
-        setText(e.target.textContent)
-        fetch({ variables: { name: e.target.textContent } })
+        const name = e.target.textContent
+        setText(name)
+        myFetch(name)
     }
 
     const handleSubmit = e => {
         e.preventDefault()
-        fetch({ variables: { name: text } })
+        myFetch(text)
     }
 
     return (

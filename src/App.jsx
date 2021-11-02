@@ -9,21 +9,22 @@ import ErrorDisplay from './components/ErrorDisplay';
 function App() {
   const [text, setText] = useState('')
   const [fetch, { data, loading }] = useLazyQuery(FETCH_POKEMON)
-
   const reset = () => setText('')
 
   return (
     <main>
-      <Input
-        text={text}
-        setText={setText}
-        fetch={fetch}
-      />
-
       <ErrorBoundary
         reset={reset}
         ErrorComponent={ErrorDisplay}
+        text={text}
+        setText={setText}
+        fetch={fetch}
       >
+        <Input
+          text={text}
+          setText={setText}
+          fetch={fetch}
+        />
         <Display
           data={data}
           loading={loading}

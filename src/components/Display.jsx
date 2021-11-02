@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from 'react'
 import ReactLoading from 'react-loading'
 
 function Display({ data, loading, text }) {
     const border = data?.pokemon ? 'b-solid' : 'b-dashed'
-    const [error, setError] = useState(false)
 
     useEffect(() => {
-        setError(data?.pokemon === null && text !== "" && !loading)
-    }, [data, loading, text])
+        if (data?.pokemon === null && text !== "" && !loading) {
+            throw new Error(`The pokemon "${text}" is not in the database.`)
 
-    if (error) throw new Error(`The pokemon "${text}" is not in the database.`)
+        }
+    }, [data, loading])
 
     return (
         <div className={`display ${border}`} >
@@ -17,7 +18,8 @@ function Display({ data, loading, text }) {
                 {
                     loading ?
                         `Loading ${text.replace(/(?<=^.{7}).+/, '...')} (xxx)` :
-                        data?.pokemon ? `${data.pokemon.name} (${data.pokemon.number})` : 'No Pokemon Yet! (xxx)'
+                        data?.pokemon ? `${data.pokemon.name} (${data.pokemon.number})` :
+                            'No Pokemon Yet! (xxx)'
                 }
             </h1>
 
@@ -66,6 +68,7 @@ function Display({ data, loading, text }) {
                 </tbody>
             </table>
         </div>
+
     )
 }
 
