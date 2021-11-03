@@ -49,20 +49,24 @@ main {
       }
     }
 
-    p button {
-      color: map-get($map: $colors, $key: main);
-      background-color: inherit;
-      border: none;
+    p {
+      font-size: inherit;
+      font-family: $secondary-font;
 
-      &:hover {
-        text-decoration: underline;
+      button {
+        color: map-get($map: $colors, $key: main);
+        background-color: inherit;
+        border: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
 
   .display {
     @include center;
-    // @include border;
     border-radius: 1rem;
     padding: 1rem 0 2rem;
     flex-direction: column;

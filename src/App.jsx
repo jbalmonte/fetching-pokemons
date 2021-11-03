@@ -16,9 +16,6 @@ function App() {
       <ErrorBoundary
         reset={reset}
         ErrorComponent={ErrorDisplay}
-        text={text}
-        setText={setText}
-        fetch={fetch}
       >
         <Input
           text={text}
