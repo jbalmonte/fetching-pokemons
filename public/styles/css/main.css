@@ -92,6 +92,8 @@ main #input p {
 }
 
 main #input p button {
+  font-size: inherit;
+  font-family: "Quattrocento";
   color: #169ca7;
   background-color: inherit;
   border: none;

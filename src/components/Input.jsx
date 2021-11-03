@@ -15,7 +15,9 @@ function Input({ text, setText, fetch, reset = null }) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        myFetch(text)
+        if (text) {
+            myFetch(text)
+        }
     }
 
     return (

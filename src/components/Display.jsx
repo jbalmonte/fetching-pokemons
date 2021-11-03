@@ -8,7 +8,6 @@ function Display({ data, loading, text }) {
     useEffect(() => {
         if (data?.pokemon === null && text !== "" && !loading) {
             throw new Error(`The pokemon "${text}" is not in the database.`)
-
         }
     }, [data, loading])
 

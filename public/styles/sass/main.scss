@@ -54,6 +54,8 @@ main {
       font-family: $secondary-font;
 
       button {
+        font-size: inherit;
+        font-family: $secondary-font;
         color: map-get($map: $colors, $key: main);
         background-color: inherit;
         border: none;
